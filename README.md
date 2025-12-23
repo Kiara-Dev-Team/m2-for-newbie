@@ -189,6 +189,9 @@ This is a community effort. Ways to contribute:
 - 📘 [Complete UI/UX Design](UI_UX_DESIGN.md) - Full specification
 - 🎯 [Design Principles](DESIGN_PRINCIPLES.md) - Quick reference and decision framework
 - 🗺️ [Implementation Roadmap](ROADMAP.md) - 40-week plan with milestones
+- 📊 [Repository Analysis](ANALYSIS.md) - Good vs bad practices assessment
+- 🚀 [Action Items](ACTION_ITEMS.md) - Immediate steps to move forward
+- 🤝 [Contributing Guide](CONTRIBUTING.md) - How to help build this
 - 🌐 [Current Macaulay2](http://www2.macaulay2.com/) - The system we're improving
 - 💬 Discord Community (planned - see roadmap)
 - 🗨️ Discourse Forum (planned - see roadmap)
@@ -203,11 +206,19 @@ This is a community effort. Ways to contribute:
 
 ## Next Steps
 
+### For Contributors
+
+1. **Read** the [Repository Analysis](ANALYSIS.md) for honest assessment of current state
+2. **Review** the [Action Items](ACTION_ITEMS.md) for immediate tasks
+3. **Check** the [Contributing Guide](CONTRIBUTING.md) for how to help
+4. **Start building** - We need implementation, not more planning!
+
+### For Understanding the Vision
+
 1. **Read** the [UI/UX Design Document](UI_UX_DESIGN.md) for the complete vision
 2. **Review** the [Design Principles](DESIGN_PRINCIPLES.md) for quick reference
 3. **Study** the [Roadmap](ROADMAP.md) for implementation details
 4. **Share** your feedback and ideas
-5. **Join** the effort to make computational algebra delightful
 
 **Let's make mathematics software that mathematicians love to use.**
 
