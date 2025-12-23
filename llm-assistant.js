@@ -101,7 +101,7 @@ function sendMessage(event) {
         const response = generateResponse(message);
         addMessage('assistant', response);
         hideLoading();
-    }, delay); // Random delay between 1-2 seconds
+    }, delay);
 }
 
 // Send quick question
@@ -337,7 +337,7 @@ function hideLoading() {
 function setupAutoResize() {
     const input = document.getElementById('messageInput');
     if (input) {
-        autoResize.call(input);
+        autoResize();
     }
 }
 
