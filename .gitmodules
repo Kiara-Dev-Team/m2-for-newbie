@@ -1,0 +1,4 @@
+[submodule "M2"]
+	path = M2
+	url = https://github.com/Macaulay2/M2.git
+	branch = stable
