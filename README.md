@@ -70,8 +70,12 @@ This is a work in progress, and we'd love your help! Whether you:
 
 ---
 
-*"Simplicity is not the absence of complexity—it's mastery of it."*
+*"Simplicity is not the absence of complexity—it's mastery of it."* - Project Vision
 
 ---
 
-**License:** Free and open source (AGPL-3.0) 
+## License
+
+This project is free and open source software licensed under the [GNU Affero General Public License v3.0 (AGPL-3.0)](LICENSE).
+
+You are free to use, modify, and distribute this software. See the [LICENSE](LICENSE) file for full details. 
