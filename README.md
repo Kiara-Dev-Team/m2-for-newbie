@@ -186,7 +186,7 @@ This is a community effort. Ways to contribute:
 
 ## Resources
 
-- 📘 [Complete UI/UX Design](UI_UX_DESIGN.md) - Full specification (26,000 words)
+- 📘 [Complete UI/UX Design](UI_UX_DESIGN.md) - Full specification
 - 🎯 [Design Principles](DESIGN_PRINCIPLES.md) - Quick reference and decision framework
 - 🗺️ [Implementation Roadmap](ROADMAP.md) - 40-week plan with milestones
 - 🌐 [Current Macaulay2](http://www2.macaulay2.com/) - The system we're improving

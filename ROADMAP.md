@@ -443,11 +443,11 @@ GitHub:
 - Analytics: $200/month
 - Monitoring: $100/month
 
-**Total Phase 1-2:** ~$50k (8 people × 6 months × $1k/month)  
-**Total Phase 3-4:** ~$100k (12 people × 6 months × $1.5k/month)  
+**Total Phase 1-2:** ~$48k (8 people × 6 months × $1k/month)  
+**Total Phase 3-4:** ~$108k (12 people × 6 months × $1.5k/month)  
 **Infrastructure Year 1:** ~$20k
 
-**Grand Total:** ~$170k for first year
+**Grand Total:** ~$176k for first year
 
 ### Funding Options
 1. **Academic grants** (NSF, ERC, etc.)

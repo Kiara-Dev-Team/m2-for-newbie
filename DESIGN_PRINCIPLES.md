@@ -221,11 +221,11 @@ If NO: We have more work to do.
 ## Implementation Priorities
 
 ### Phase 1: Foundation (Must Have)
-1. ✅ Web notebook (basic)
-2. ✅ One example that works perfectly
-3. ✅ Clear, kind error messages (top 10 errors)
-4. ✅ Quickstart tutorial (5 minutes)
-5. ✅ LaTeX output rendering
+1. Web notebook (basic)
+2. One example that works perfectly
+3. Clear, kind error messages (top 10 errors)
+4. Quickstart tutorial (5 minutes)
+5. LaTeX output rendering
 
 ### Phase 2: Polish (Should Have)
 1. Auto-complete
