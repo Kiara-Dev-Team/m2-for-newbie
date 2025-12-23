@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M2 AI Assistant - Get Help with Macaulay2</title>
+    <link rel="stylesheet" href="llm-assistant.css">
+</head>
+<body>
+    <div class="assistant-container">
+        <!-- Header -->
+        <header class="assistant-header">
+            <div class="header-content">
+                <h1>🤖 M2 AI Assistant</h1>
+                <p class="subtitle">Get instant help with Macaulay2</p>
+            </div>
+            <button class="close-btn" onclick="closeAssistant()" aria-label="Close assistant">✕</button>
+        </header>
+
+        <!-- Chat Messages Area -->
+        <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+            <!-- Welcome Message -->
+            <div class="message assistant-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p><strong>Hi! I'm your M2 assistant.</strong></p>
+                    <p>I can help you with:</p>
+                    <ul>
+                        <li>Understanding M2 syntax and concepts</li>
+                        <li>Debugging error messages</li>
+                        <li>Finding the right functions for your task</li>
+                        <li>Explaining mathematical concepts</li>
+                        <li>Providing code examples</li>
+                    </ul>
+                    <p>What would you like to know?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h3 class="quick-actions-title">Quick questions:</h3>
+            <div class="quick-action-buttons">
+                <button class="quick-action-btn" onclick="sendQuickQuestion('How do I define a polynomial ring?')">
+                    How do I define a polynomial ring?
+                </button>
+                <button class="quick-action-btn" onclick="sendQuickQuestion('What is a Groebner basis?')">
+                    What is a Groebner basis?
+                </button>
+                <button class="quick-action-btn" onclick="sendQuickQuestion('How do I compute a resolution?')">
+                    How do I compute a resolution?
+                </button>
+                <button class="quick-action-btn" onclick="sendQuickQuestion('Explain this error message')">
+                    Explain this error message
+                </button>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <form class="input-form" onsubmit="sendMessage(event)">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        class="message-input" 
+                        placeholder="Ask me anything about Macaulay2..."
+                        rows="1"
+                        aria-label="Message input"
+                        onkeydown="handleKeyDown(event)"
+                    ></textarea>
+                    <button 
+                        type="submit" 
+                        class="send-btn" 
+                        id="sendBtn"
+                        aria-label="Send message"
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-hints">
+                    <span class="hint">Press Enter to send, Shift+Enter for new line</span>
+                    <span class="char-count" id="charCount">0/2000</span>
+                </div>
+            </form>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <span>Thinking...</span>
+        </div>
+    </div>
+
+    <!-- Floating Action Button (to open assistant) -->
+    <button class="fab" onclick="openAssistant()" aria-label="Open AI Assistant">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        <span class="fab-badge">AI</span>
+    </button>
+
+    <script src="llm-assistant.js"></script>
+</body>
+</html>
