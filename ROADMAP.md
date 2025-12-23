@@ -263,7 +263,7 @@ plot(I)  -- 2D curve visualization
 - [ ] Cloud-local sync
 
 **Proposed Installation Commands:**
-```bash
+```shell
 # macOS (future)
 brew install macaulay2
 
@@ -272,15 +272,18 @@ sudo apt install macaulay2
 
 # Fedora (future)
 sudo dnf install macaulay2
+```
 
+```shell
 # Docker (future)
 docker pull macaulay2/macaulay2
 docker run -it macaulay2/macaulay2
-
-# Manual (future)
-# Download binary from macaulay2.org/download
-# Double-click installer
 ```
+
+**Manual Installation (future):**
+1. Download binary from macaulay2.org/download
+2. Double-click installer
+3. Follow installation wizard
 
 **Note:** These are proposed installation methods for the redesigned system. Current Macaulay2 installation requires different steps. See [official installation guide](http://www2.macaulay2.com/Macaulay2/Downloads/).
 

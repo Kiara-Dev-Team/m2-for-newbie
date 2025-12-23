@@ -190,7 +190,8 @@ This is a community effort. Ways to contribute:
 - 🎯 [Design Principles](DESIGN_PRINCIPLES.md) - Quick reference and decision framework
 - 🗺️ [Implementation Roadmap](ROADMAP.md) - 40-week plan with milestones
 - 🌐 [Current Macaulay2](http://www2.macaulay2.com/) - The system we're improving
-- 💬 Discord Community (coming soon)
+- 💬 Discord Community (planned - see roadmap)
+- 🗨️ Discourse Forum (planned - see roadmap)
 
 ## Credits
 
