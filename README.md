@@ -9,6 +9,12 @@ Build upon Macaulay2's powerful computational algebra capabilities with an intui
 
 **The Goal:** Make computational algebraic geometry as approachable as opening a web browser, while maintaining the power that mathematicians rely on.
 
+## Improved UI/UX Preview
+
+![Browser-First Notebook Interface](ui-ux-notebook-interface.svg)
+
+*Our redesigned browser-based notebook interface: Simple, beautiful, and intuitive. Run Macaulay2 computations directly in your browser with zero installation required.*
+
 ## What's Inside
 
 This repository contains comprehensive UI/UX design documentation for reimagining Macaulay2:
