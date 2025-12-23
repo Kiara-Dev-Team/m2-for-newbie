@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="M2 for Newbies - Making math magic accessible to everyone. A simple, friendly version of Macaulay2 for students, mathematicians, and curious minds.">
+    <title>M2 for Newbies - Making Math Magic Accessible</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        h2 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        
+        strong {
+            color: #764ba2;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        .highlight-box {
+            background: #f7f7ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>M2 for Newbies <span class="emoji">🎓✨</span></h1>
+        <p class="subtitle"><strong>Making math magic accessible to everyone</strong></p>
+        
+        <h2>What is this?</h2>
+        <p>Have you ever wanted to solve really complex math problems but found the tools too complicated? That's where we come in!</p>
+        <p><strong>M2 for Newbies</strong> is a simple, friendly version of Macaulay2 (M2) - a powerful tool that helps people explore and solve problems in algebra. Think of it like a calculator, but instead of just adding and multiplying numbers, it can work with patterns, shapes, and mathematical structures.</p>
+        
+        <h2>Who is this for?</h2>
+        <p><strong>Everyone!</strong> Seriously. You don't need to be:</p>
+        <ul>
+            <li>A programmer</li>
+            <li>A math genius</li>
+            <li>An IT expert</li>
+            <li>Even good at math (yet!)</li>
+        </ul>
+        
+        <p>Whether you're:</p>
+        <ul>
+            <li><span class="emoji">🎒</span> A 14-year-old curious about math</li>
+            <li><span class="emoji">📚</span> A student learning algebra</li>
+            <li><span class="emoji">🔬</span> A mathematician exploring new ideas</li>
+            <li><span class="emoji">🤔</span> Just someone who likes puzzles</li>
+        </ul>
+        
+        <p><strong>You're welcome here!</strong></p>
+        
+        <h2>Why should I care?</h2>
+        <p>Math isn't just about numbers on paper. It's about:</p>
+        <ul>
+            <li><span class="emoji">🎨</span> <strong>Patterns</strong> - Finding beautiful structures in chaos</li>
+            <li><span class="emoji">🧩</span> <strong>Puzzles</strong> - Solving problems no one has solved before</li>
+            <li><span class="emoji">🚀</span> <strong>Discovery</strong> - Creating new knowledge</li>
+            <li><span class="emoji">💡</span> <strong>Magic</strong> - Seeing how everything connects</li>
+        </ul>
+        
+        <p>M2 for Newbies makes these experiences accessible without needing to know complicated programming or spend hours fighting with confusing software.</p>
+        
+        <h2>What makes this special?</h2>
+        
+        <h3><span class="emoji">🌟</span> Simple Language</h3>
+        <p>No weird computer jargon. If you can read this, you can use this.</p>
+        
+        <h3><span class="emoji">🎯</span> Easy to Start</h3>
+        <p>No complicated installation. No hours of setup. Just open it and start exploring.</p>
+        
+        <h3><span class="emoji">💬</span> Friendly Help</h3>
+        <p>When something goes wrong, we explain what happened in plain English - and how to fix it.</p>
+        
+        <h3><span class="emoji">🎨</span> Beautiful Results</h3>
+        <p>See your math problems come to life with clear, visual results that make sense.</p>
+        
+        <h2>Our Vision</h2>
+        <div class="highlight-box">
+            <p>We believe that powerful mathematical tools shouldn't be locked behind walls of complexity. Everyone deserves access to explore, create, and discover - regardless of their background.</p>
+            <p>This project is inspired by a simple idea: <strong>Make the tool invisible, so the mathematics can shine.</strong></p>
+        </div>
+        
+        <h2>Getting Started</h2>
+        <p><em>Coming soon!</em> We're working hard to make this as simple as clicking a link and starting to explore. Stay tuned!</p>
+        
+        <h2>Join Us</h2>
+        <p>This is a work in progress, and we'd love your help! Whether you:</p>
+        <ul>
+            <li>Have questions</li>
+            <li>Found something confusing</li>
+            <li>Want to contribute ideas</li>
+            <li>Just want to say hi</li>
+        </ul>
+        
+        <p><strong>Everyone is welcome.</strong> Let's make math accessible together.</p>
+        
+        <div class="quote">
+            "Simplicity is not the absence of complexity—it's mastery of it."
+            <br><small>- Project Vision</small>
+        </div>
+        
+        <div class="footer">
+            <p><strong>License:</strong> Free and open source software licensed under the <a href="LICENSE">GNU Affero General Public License v3.0 (AGPL-3.0)</a></p>
+            <p>View this project on <a href="https://github.com/Kiara-Dev-Team/m2-for-newbie">GitHub</a></p>
+        </div>
+    </div>
+</body>
+</html>
