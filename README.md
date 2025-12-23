@@ -54,6 +54,16 @@ We believe that powerful mathematical tools shouldn't be locked behind walls of 
 
 This project is inspired by a simple idea: **Make the tool invisible, so the mathematics can shine.**
 
+## Project Documentation
+
+We're building this step by step with a clear vision and plan:
+
+- 📋 **[MVP Definition](MVP.md)** - The minimal feature set for our first release
+- 🏗️ **[Architecture](ARCHITECTURE.md)** - System design and technical decisions
+- 🛠️ **[Tech Stack](TECH_STACK.md)** - Technologies we're using and why
+
+These documents guide our development and ensure we stay focused on delivering a simple, powerful experience.
+
 ## Getting Started
 
 *Coming soon!* We're working hard to make this as simple as clicking a link and starting to explore. Stay tuned!
