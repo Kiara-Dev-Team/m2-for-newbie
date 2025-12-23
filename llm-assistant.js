@@ -1,6 +1,13 @@
 // M2 AI Assistant JavaScript
 // Handles user interactions, message sending, and UI updates
 
+// Constants
+const MIN_RESPONSE_DELAY = 1000; // milliseconds
+const MAX_ADDITIONAL_DELAY = 1000; // milliseconds
+const MAX_INPUT_LENGTH = 2000; // characters
+const INPUT_WARNING_THRESHOLD = 0.9; // show warning at 90% of max
+const MAX_INPUT_HEIGHT = 120; // pixels
+
 // State management
 const state = {
     isOpen: false,
@@ -88,8 +95,6 @@ function sendMessage(event) {
     showLoading();
     
     // Simulate AI response (in production, this would call an API)
-    const MIN_RESPONSE_DELAY = 1000;
-    const MAX_ADDITIONAL_DELAY = 1000;
     const delay = MIN_RESPONSE_DELAY + Math.random() * MAX_ADDITIONAL_DELAY;
     
     setTimeout(() => {
@@ -349,9 +354,8 @@ function autoResize(event) {
     
     if (!input) return;
     
-    const MAX_HEIGHT = 120;
     input.style.height = 'auto';
-    input.style.height = Math.min(input.scrollHeight, MAX_HEIGHT) + 'px';
+    input.style.height = Math.min(input.scrollHeight, MAX_INPUT_HEIGHT) + 'px';
 }
 
 // Update character count
@@ -360,16 +364,14 @@ function updateCharCount() {
     const counter = document.getElementById('charCount');
     
     if (input && counter) {
-        const MAX_LENGTH = 2000;
-        const WARNING_THRESHOLD = 0.9;
         const length = input.value.length;
         
-        counter.textContent = `${length}/${MAX_LENGTH}`;
+        counter.textContent = `${length}/${MAX_INPUT_LENGTH}`;
         
-        if (length > MAX_LENGTH) {
+        if (length > MAX_INPUT_LENGTH) {
             counter.style.color = 'var(--error-red)';
-            input.value = input.value.substring(0, MAX_LENGTH);
-        } else if (length > MAX_LENGTH * WARNING_THRESHOLD) {
+            input.value = input.value.substring(0, MAX_INPUT_LENGTH);
+        } else if (length > MAX_INPUT_LENGTH * INPUT_WARNING_THRESHOLD) {
             counter.style.color = 'var(--warning-yellow)';
         } else {
             counter.style.color = 'var(--text-secondary)';
