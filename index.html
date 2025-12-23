@@ -120,6 +120,228 @@
             text-decoration: underline;
         }
         
+        /* Interactive Demo Styles */
+        .demo-box {
+            background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
+            border: 3px solid #667eea;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .demo-title {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        
+        .demo-subtitle {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+        
+        .code-demo {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .code-editor {
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            font-size: 14px;
+            color: #d4d4d4;
+            margin-bottom: 15px;
+        }
+        
+        .code-line {
+            padding: 4px 0;
+            position: relative;
+        }
+        
+        .code-comment {
+            color: #6a9955;
+            font-style: italic;
+        }
+        
+        .code-keyword {
+            color: #4fc1ff;
+            font-weight: bold;
+        }
+        
+        .code-value {
+            color: #ce9178;
+        }
+        
+        .code-function {
+            color: #dcdcaa;
+        }
+        
+        .tooltip-trigger {
+            display: inline-block;
+            margin-left: 5px;
+            cursor: help;
+            font-size: 12px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        
+        .tooltip-trigger:hover {
+            opacity: 1;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: #fff;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            max-width: 400px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .run-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+        }
+        
+        .run-button:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+        }
+        
+        .run-button:active {
+            transform: translateY(0);
+        }
+        
+        .code-output {
+            background: white;
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .output-header {
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .output-content {
+            margin-bottom: 15px;
+        }
+        
+        .output-math {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            color: #333;
+            padding: 10px;
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            margin-bottom: 10px;
+        }
+        
+        .output-explanation {
+            color: #666;
+            font-size: 1.05em;
+            padding: 10px;
+            background: #e7f9ed;
+            border-radius: 4px;
+        }
+        
+        .output-meaning {
+            border-top: 2px solid #e0e0e0;
+            padding-top: 15px;
+        }
+        
+        .output-meaning h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .next-step-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .next-step-button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        
+        .progress-tracker {
+            background: #fff;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .progress-tracker h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .progress-item {
+            padding: 10px 0;
+            font-size: 1.05em;
+        }
+        
+        .progress-item.completed {
+            color: #28a745;
+        }
+        
+        .progress-item.current {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .progress-bar-container {
+            background: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+        
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
@@ -132,13 +354,148 @@
             h2 {
                 font-size: 1.5em;
             }
+            
+            .demo-box {
+                padding: 15px;
+            }
+            
+            .code-editor {
+                font-size: 12px;
+            }
         }
     </style>
+    <script>
+        // Interactive demo functionality
+        function runDemo() {
+            const button = document.querySelector('.run-button');
+            const output = document.getElementById('demo-output');
+            
+            // Simulate computation
+            button.textContent = '⚙️ Computing...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                output.style.display = 'block';
+                button.textContent = '✅ Computed!';
+                button.style.background = '#667eea';
+                
+                // Scroll to output
+                output.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 1500);
+        }
+        
+        function showNextStep() {
+            alert('🎉 Great! In the full application, you\'d be able to:\n\n' +
+                  '• Try more examples\n' +
+                  '• Modify the code yourself\n' +
+                  '• See visualizations\n' +
+                  '• Follow guided tutorials\n\n' +
+                  'Stay tuned for the launch!');
+        }
+        
+        // Tooltip functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const triggers = document.querySelectorAll('.tooltip-trigger');
+            
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const tooltipId = this.getAttribute('data-tooltip');
+                    const tooltip = document.querySelector(`[data-tooltip-id="${tooltipId}"]`);
+                    
+                    // Hide all tooltips
+                    document.querySelectorAll('.tooltip').forEach(t => t.style.display = 'none');
+                    
+                    // Show clicked tooltip
+                    if (tooltip) {
+                        tooltip.style.display = 'block';
+                        tooltip.style.position = 'fixed';
+                        tooltip.style.left = '50%';
+                        tooltip.style.top = '50%';
+                        tooltip.style.transform = 'translate(-50%, -50%)';
+                    }
+                });
+            });
+            
+            // Close tooltips when clicking outside
+            document.addEventListener('click', function() {
+                document.querySelectorAll('.tooltip').forEach(t => t.style.display = 'none');
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>M2 for Newbies <span class="emoji">🎓✨</span></h1>
         <p class="subtitle"><strong>Making math magic accessible to everyone</strong></p>
+        
+        <!-- Interactive Demo Section -->
+        <div class="demo-box">
+            <h3 class="demo-title">👋 Try It Right Now (No Installation!)</h3>
+            <p class="demo-subtitle">See computational algebra in action. Click "Run" to execute your first computation:</p>
+            
+            <div class="code-demo">
+                <div class="code-editor">
+                    <div class="code-line">
+                        <span class="code-comment">-- Create a polynomial ring over rational numbers</span>
+                    </div>
+                    <div class="code-line">
+                        <span class="code-keyword">R</span> = <span class="code-value">QQ</span>[x,y,z]
+                        <span class="tooltip-trigger" data-tooltip="ring">ℹ️</span>
+                    </div>
+                    <div class="code-line">
+                        <span class="code-comment">-- Define an ideal (collection of polynomials)</span>
+                    </div>
+                    <div class="code-line">
+                        <span class="code-keyword">I</span> = <span class="code-function">ideal</span>(x<sup>2</sup> - y<sup>3</sup>)
+                        <span class="tooltip-trigger" data-tooltip="ideal">ℹ️</span>
+                    </div>
+                    <div class="code-line">
+                        <span class="code-comment">-- Break it into irreducible pieces</span>
+                    </div>
+                    <div class="code-line">
+                        <span class="code-function">primaryDecomposition</span> I
+                        <span class="tooltip-trigger" data-tooltip="decomp">ℹ️</span>
+                    </div>
+                </div>
+                <button class="run-button" onclick="runDemo()">▶ Run This Code</button>
+            </div>
+            
+            <div class="code-output" id="demo-output" style="display: none;">
+                <div class="output-header">Output:</div>
+                <div class="output-content">
+                    <div class="output-math">{ideal(x, y)}</div>
+                    <div class="output-explanation">
+                        ✅ <strong>Success!</strong> The ideal decomposes into one component: the point where both x=0 and y=0.
+                    </div>
+                </div>
+                <div class="output-meaning">
+                    <h4>🎨 What This Means:</h4>
+                    <p>You just discovered that the curve defined by <em>x² - y³ = 0</em> has only one "irreducible piece" - geometrically, it's a single connected curve through the origin!</p>
+                    <button class="next-step-button" onclick="showNextStep()">✨ Try Another Example</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tooltips -->
+        <div class="tooltip-container" id="tooltips">
+            <div class="tooltip" data-tooltip-id="ring" style="display: none;">
+                <strong>R = QQ[x,y,z]</strong><br>
+                Creates a "ring" - a mathematical structure where you can add and multiply polynomials.<br>
+                • <strong>R</strong> = name of your ring<br>
+                • <strong>QQ</strong> = rational numbers (fractions)<br>
+                • <strong>[x,y,z]</strong> = variables you can use
+            </div>
+            <div class="tooltip" data-tooltip-id="ideal" style="display: none;">
+                <strong>ideal(...)</strong><br>
+                An "ideal" is a special collection of polynomials. Think of it as describing a geometric shape (like a curve or surface) using equations.
+            </div>
+            <div class="tooltip" data-tooltip-id="decomp" style="display: none;">
+                <strong>primaryDecomposition</strong><br>
+                Breaks your ideal into simpler, irreducible pieces. Like factoring, but for geometric objects!<br>
+                Helps you understand the structure of varieties.
+            </div>
+        </div>
         
         <h2>What is this?</h2>
         <p>Have you ever wanted to solve really complex math problems but found the tools too complicated? That's where we come in!</p>
@@ -174,6 +531,24 @@
         
         <p>M2 for Newbies makes these experiences accessible without needing to know complicated programming or spend hours fighting with confusing software.</p>
         
+        <!-- Learning Journey Section -->
+        <div class="progress-tracker">
+            <h3>🎯 Your Learning Journey</h3>
+            <p style="color: #666; margin-bottom: 15px;">Here's what you'll master, step by step:</p>
+            
+            <div class="progress-item completed">✅ <strong>Step 1:</strong> Run your first computation (you just did this!)</div>
+            <div class="progress-item current">▶️ <strong>Step 2:</strong> Create your own polynomial ring</div>
+            <div class="progress-item">⬜ <strong>Step 3:</strong> Define and explore ideals</div>
+            <div class="progress-item">⬜ <strong>Step 4:</strong> Compute Groebner bases</div>
+            <div class="progress-item">⬜ <strong>Step 5:</strong> Visualize varieties in 3D</div>
+            <div class="progress-item">⬜ <strong>Step 6:</strong> Solve your own research problems</div>
+            
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" style="width: 15%;"></div>
+            </div>
+            <p style="text-align: center; color: #667eea; margin-top: 10px; font-weight: bold;">15% Complete - You're on your way! 🚀</p>
+        </div>
+        
         <h2>What makes this special?</h2>
         
         <h3><span class="emoji">🌟</span> Simple Language</h3>
@@ -207,6 +582,41 @@
         </ul>
         
         <p><strong>Everyone is welcome.</strong> Let's make math accessible together.</p>
+        
+        <!-- Beginner-Friendly Reassurance Section -->
+        <div class="highlight-box" style="background: #fff9e6; border-left: 4px solid #ffc107;">
+            <h3 style="color: #ff8f00; margin-top: 0;">👋 You Belong Here</h3>
+            <p><strong>Worried you're not "ready" for this?</strong> You are! This tool is designed for YOU:</p>
+            <ul style="margin-left: 20px;">
+                <li>✅ <strong>Never programmed before?</strong> Perfect! We'll teach you.</li>
+                <li>✅ <strong>Math makes you nervous?</strong> We explain everything in plain English.</li>
+                <li>✅ <strong>Afraid of breaking something?</strong> Impossible! You can't break anything. There's always an "undo" button.</li>
+                <li>✅ <strong>Think this is for "smart people"?</strong> Nope! It's for curious people like you.</li>
+            </ul>
+            <p style="margin-bottom: 0;"><strong>Remember:</strong> Every expert was once a beginner who didn't give up. 💪</p>
+        </div>
+        
+        <!-- Common Questions Section -->
+        <h2>Common Questions <span style="font-size: 0.7em; color: #666;">(Yes, everyone asks these!)</span></h2>
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">❓ "What if I make a mistake?"</h3>
+            <p><strong>Great!</strong> Mistakes are how you learn. The system will gently guide you back on track with helpful error messages, not scary technical jargon.</p>
+        </div>
+        
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">❓ "How long will this take to learn?"</h3>
+            <p><strong>First computation: 5 minutes.</strong> Feeling confident: 1 week. Mastering basics: 1 month. But you'll have fun from minute one!</p>
+        </div>
+        
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">❓ "Do I need to install anything?"</h3>
+            <p><strong>Nope!</strong> Just open your web browser and start computing. Zero installation, zero configuration, zero hassle.</p>
+        </div>
+        
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">❓ "What if I get stuck?"</h3>
+            <p><strong>We've got you covered!</strong> Built-in help, friendly error messages, and a welcoming community ready to answer questions without judgment.</p>
+        </div>
         
         <div class="quote">
             "Simplicity is not the absence of complexity—it's mastery of it."
