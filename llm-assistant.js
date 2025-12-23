@@ -88,11 +88,15 @@ function sendMessage(event) {
     showLoading();
     
     // Simulate AI response (in production, this would call an API)
+    const MIN_RESPONSE_DELAY = 1000;
+    const MAX_ADDITIONAL_DELAY = 1000;
+    const delay = MIN_RESPONSE_DELAY + Math.random() * MAX_ADDITIONAL_DELAY;
+    
     setTimeout(() => {
         const response = generateResponse(message);
         addMessage('assistant', response);
         hideLoading();
-    }, 1000 + Math.random() * 1000); // Random delay between 1-2 seconds
+    }, delay); // Random delay between 1-2 seconds
 }
 
 // Send quick question
@@ -148,29 +152,77 @@ function renderMessages() {
     const chatMessages = document.getElementById('chatMessages');
     if (!chatMessages) return;
     
-    // Clear existing messages except welcome message
+    // Store welcome message content before clearing
     const welcomeMessage = chatMessages.querySelector('.assistant-message');
+    const welcomeMessageClone = welcomeMessage ? welcomeMessage.cloneNode(true) : null;
+    
+    // Clear all messages
     chatMessages.innerHTML = '';
-    if (welcomeMessage) {
-        chatMessages.appendChild(welcomeMessage);
+    
+    // Re-add welcome message if it existed
+    if (welcomeMessageClone) {
+        chatMessages.appendChild(welcomeMessageClone);
     }
     
     // Render all saved messages
     state.messages.forEach(message => renderMessage(message));
 }
 
-// Parse message content for formatting
+// Parse message content for formatting (with basic XSS protection)
 function parseMessageContent(content) {
-    // Convert code blocks: `code` -> <code>code</code>
-    let parsed = content.replace(/`([^`]+)`/g, '<code>$1</code>');
+    // Split content by backticks to separate code from text
+    const parts = [];
+    let currentText = '';
+    let inCode = false;
     
-    // Convert newlines to <br>
-    parsed = parsed.replace(/\n/g, '<br>');
+    for (let i = 0; i < content.length; i++) {
+        if (content[i] === '`') {
+            if (inCode) {
+                // End code block
+                parts.push({ type: 'code', content: currentText });
+                currentText = '';
+                inCode = false;
+            } else {
+                // Start code block - save any text before it
+                if (currentText) {
+                    parts.push({ type: 'text', content: currentText });
+                    currentText = '';
+                }
+                inCode = true;
+            }
+        } else {
+            currentText += content[i];
+        }
+    }
     
-    // Convert **bold** to <strong>
-    parsed = parsed.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    // Add any remaining content
+    if (currentText) {
+        parts.push({ type: inCode ? 'code' : 'text', content: currentText });
+    }
     
-    return parsed;
+    // Escape HTML helper
+    const escapeHtml = (text) => {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    };
+    
+    // Build the final HTML
+    let result = parts.map(part => {
+        if (part.type === 'code') {
+            return `<code>${escapeHtml(part.content)}</code>`;
+        } else {
+            // Escape text and apply formatting
+            let text = escapeHtml(part.content);
+            // Convert newlines to <br>
+            text = text.replace(/\n/g, '<br>');
+            // Convert **bold** to <strong>
+            text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+            return text;
+        }
+    }).join('');
+    
+    return result;
 }
 
 // Generate AI response (mock - in production, this would call an API)
@@ -284,12 +336,22 @@ function setupAutoResize() {
     }
 }
 
-function autoResize() {
-    const input = this.tagName ? this : document.getElementById('messageInput');
+function autoResize(event) {
+    // Get input element - either from event target or by ID
+    let input;
+    if (event && event.target) {
+        input = event.target;
+    } else if (this && this.tagName === 'TEXTAREA') {
+        input = this;
+    } else {
+        input = document.getElementById('messageInput');
+    }
+    
     if (!input) return;
     
+    const MAX_HEIGHT = 120;
     input.style.height = 'auto';
-    input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+    input.style.height = Math.min(input.scrollHeight, MAX_HEIGHT) + 'px';
 }
 
 // Update character count
@@ -298,14 +360,16 @@ function updateCharCount() {
     const counter = document.getElementById('charCount');
     
     if (input && counter) {
+        const MAX_LENGTH = 2000;
+        const WARNING_THRESHOLD = 0.9;
         const length = input.value.length;
-        const maxLength = 2000;
-        counter.textContent = `${length}/${maxLength}`;
         
-        if (length > maxLength) {
+        counter.textContent = `${length}/${MAX_LENGTH}`;
+        
+        if (length > MAX_LENGTH) {
             counter.style.color = 'var(--error-red)';
-            input.value = input.value.substring(0, maxLength);
-        } else if (length > maxLength * 0.9) {
+            input.value = input.value.substring(0, MAX_LENGTH);
+        } else if (length > MAX_LENGTH * WARNING_THRESHOLD) {
             counter.style.color = 'var(--warning-yellow)';
         } else {
             counter.style.color = 'var(--text-secondary)';

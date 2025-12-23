@@ -4,6 +4,7 @@
 :root {
     /* Color palette from UI_UX_DESIGN.md */
     --primary-blue: #0066CC;
+    --primary-blue-dark: #0052A3;
     --success-green: #28A745;
     --warning-yellow: #FFC107;
     --error-red: #DC3545;
@@ -321,7 +322,7 @@ body {
 }
 
 .send-btn:hover {
-    background: #0052A3;
+    background: var(--primary-blue-dark);
     transform: scale(1.05);
 }
 
