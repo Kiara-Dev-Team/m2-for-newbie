@@ -262,25 +262,27 @@ plot(I)  -- 2D curve visualization
 - [ ] Docker image
 - [ ] Cloud-local sync
 
-**Installation Commands:**
+**Proposed Installation Commands:**
 ```bash
-# macOS
+# macOS (future)
 brew install macaulay2
 
-# Ubuntu/Debian
+# Ubuntu/Debian (future)
 sudo apt install macaulay2
 
-# Fedora
+# Fedora (future)
 sudo dnf install macaulay2
 
-# Docker
+# Docker (future)
 docker pull macaulay2/macaulay2
 docker run -it macaulay2/macaulay2
 
-# Manual
+# Manual (future)
 # Download binary from macaulay2.org/download
 # Double-click installer
 ```
+
+**Note:** These are proposed installation methods for the redesigned system. Current Macaulay2 installation requires different steps. See [official installation guide](http://www2.macaulay2.com/Macaulay2/Downloads/).
 
 **Success Criteria:**
 - 95% installation success rate
@@ -443,11 +445,14 @@ GitHub:
 - Analytics: $200/month
 - Monitoring: $100/month
 
-**Total Phase 1-2:** ~$48k (8 people × 6 months × $1k/month)  
-**Total Phase 3-4:** ~$108k (12 people × 6 months × $1.5k/month)  
-**Infrastructure Year 1:** ~$20k
+**Personnel (Part-time equivalent costs):**
+- Phase 1-2: ~$48k (8 FTE-months × $6k/month)
+- Phase 3-4: ~$108k (12 FTE-months × $9k/month)
+- Infrastructure Year 1: ~$20k
 
 **Grand Total:** ~$176k for first year
+
+**Note:** Personnel costs represent part-time equivalent (FTE) months, not full salaries. Actual implementation may use a mix of full-time staff, part-time contractors, student developers, and open-source contributors. These are rough estimates for planning purposes.
 
 ### Funding Options
 1. **Academic grants** (NSF, ERC, etc.)

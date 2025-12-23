@@ -437,14 +437,14 @@ Components:
    - Memory usage: Visual gauge
 
 **Implementation:**
-```javascript
-// Example: Visualize a variety
+```macaulay2
+-- Example: Visualize a variety
 R = QQ[x,y,z]
 I = ideal(x^2 + y^2 - z^2)
 plot(I, range => {-2,2})
-// → Opens interactive 3D plot using Three.js
-// → User can rotate, zoom, toggle wireframe
-// → Export as PNG, SVG, or interactive HTML
+-- → Opens interactive 3D plot using Three.js
+-- → User can rotate, zoom, toggle wireframe
+-- → Export as PNG, SVG, or interactive HTML
 ```
 
 ## Technical Implementation Roadmap
